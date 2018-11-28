@@ -1326,3 +1326,22 @@ function wpcom_vip_load_geolocation_styles_only_when_needed() {
 function wpcom_vip_disable_instapost() {
 	_deprecated_function( __FUNCTION__, '2.0.0' );
 }
+
+/**
+ * Cached version of get_page_by_path so that we're not making unnecessary SQL all the time
+ *
+ * The core function get_page_by_path() has implemented caching since
+ * https://core.trac.wordpress.org/changeset/37479
+ *
+ * @deprecated Not applicable since VIP 2.0.0
+ * @param string $page_path Page path
+ * @param string $output Optional. Output type; OBJECT*, ARRAY_N, or ARRAY_A.
+ * @param string $post_type Optional. Post type; default is 'page'.
+ * @return WP_Post|null WP_Post on success or null on failure
+ */
+function wpcom_vip_get_page_by_path( $page_path, $output = OBJECT, $post_type = 'page' ) {
+
+	_deprecated_function( __FUNCTION__, '2.0.0' );
+
+	return get_page_by_path( $page_path, $output, $post_type );
+}
